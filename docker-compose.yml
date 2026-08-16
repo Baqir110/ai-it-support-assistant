@@ -1,0 +1,39 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      LLM_PROVIDER: ${LLM_PROVIDER:-none}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com/v1}
+      LLM_MODEL: ${LLM_MODEL:-gpt-4o-mini}
+      EMBEDDING_BACKEND: ${EMBEDDING_BACKEND:-hashing}
+      DATABASE_URL: postgresql+psycopg2://it_assistant:it_assistant@db:5432/it_assistant
+    volumes:
+      - chroma_data:/app/data/chroma
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: it_assistant
+      POSTGRES_PASSWORD: it_assistant
+      POSTGRES_DB: it_assistant
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U it_assistant"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  chroma_data:
+  postgres_data:

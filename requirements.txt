@@ -1,0 +1,23 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-dotenv
+
+# RAG pipeline
+chromadb
+scikit-learn
+numpy
+
+# LLM (OpenAI-compatible; optional at runtime, required for LLM-augmented mode)
+openai
+langchain-core
+
+# Persistence (optional at runtime, required for DB-backed logging)
+sqlalchemy
+psycopg2-binary
+
+# Testing
+pytest
+pytest-mock
+httpx
