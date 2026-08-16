@@ -1,5 +1,5 @@
 ## Live Demo & API Interface
-![Swagger API Interface](assets/swagger_demo.png)
+![Swagger API Interface](assests\swagger_demo.png)
 
 
 # AI IT Support Assistant

@@ -12,6 +12,7 @@ numpy
 # LLM (OpenAI-compatible; optional at runtime, required for LLM-augmented mode)
 openai
 langchain-core
+langchain-community
 
 # Persistence (optional at runtime, required for DB-backed logging)
 sqlalchemy
