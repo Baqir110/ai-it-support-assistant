@@ -101,7 +101,24 @@ surfaced on `/health` so it's obvious whether logging is active.
 5. The final `IssueAnalysis` is (optionally) logged to Postgres and
    returned to the client.
 
-## Evaluation approach
+## Evaluation approach (automated)
+
+`scripts/evaluate.py` runs a labeled 25-case issue set through the actual
+pipeline (not mocks) and reports classification accuracy, per-category
+precision/recall/F1, escalation-flag accuracy, and RAG retrieval hit-rate,
+writing the results to [`docs/evaluation.md`](evaluation.md). It's meant to
+be re-run after every classifier or knowledge-base change, the same way a
+test suite is - `docs/evaluation.md` is generated output, not hand-written.
+
+Current headline numbers (see `docs/evaluation.md` for the full breakdown):
+84% classification accuracy, 96% escalation accuracy, 70% retrieval
+hit-rate. The gap between classification accuracy and retrieval hit-rate is
+informative on its own: the classifier's keyword rules are more robust to
+phrasing variation than the hashing-vectorizer retrieval is, which is the
+concrete, measured case for upgrading `EMBEDDING_BACKEND` to `openai` in a
+production deployment rather than a hand-wavy one.
+
+## Evaluation approach (manual/qualitative)
 
 `tests/test_classifier.py` and `tests/test_troubleshooter.py` pin down
 expected category/severity/escalation per issue type - the regression

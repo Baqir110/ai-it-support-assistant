@@ -60,7 +60,10 @@ RULES: list[ClassificationRule] = [
         category="performance",
         severity="medium",
         confidence=0.85,
-        keywords=["slow", "performance", "freezing", "lag", "lagging", "high cpu", "high memory"],
+        keywords=[
+            "slow", "performance", "freezing", "freezes", "lag", "lagging",
+            "high cpu", "high memory", "takes forever", "takes long", "boot up",
+        ],
         probable_cause="System resource or performance issue.",
         recommended_steps=[
             "Check CPU and memory usage.",
@@ -91,7 +94,11 @@ RULES: list[ClassificationRule] = [
         category="system",
         severity="high",
         confidence=0.80,
-        keywords=["blue screen", "bsod", "crash", "crashing", "won't start", "wont start", "kernel panic", "freeze on boot"],
+        keywords=[
+            "blue screen", "bsod", "crash", "crashing", "won't start", "wont start",
+            "kernel panic", "freeze on boot", "won't boot", "wont boot", "restarts randomly",
+            "reboots randomly", "restarting on its own", "reboots on its own",
+        ],
         probable_cause="Operating system, driver, or hardware stability issue.",
         recommended_steps=[
             "Restart the system.",

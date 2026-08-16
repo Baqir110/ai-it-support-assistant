@@ -134,6 +134,22 @@ OPENAI_BASE_URL=https://api.openai.com/v1   # point elsewhere for local/self-hos
 
 Check `GET /health` to confirm `llm_enabled: true`.
 
+## Evaluation
+
+`scripts/evaluate.py` runs a 25-case labeled issue set (including
+deliberately ambiguous cases) through the real classifier + RAG pipeline
+and writes results to [`docs/evaluation.md`](docs/evaluation.md):
+
+```bash
+python scripts/evaluate.py
+```
+
+Current results: **84% classification accuracy**, **96% escalation-flag
+accuracy**, **70% retrieval hit-rate**. The retrieval hit-rate is the
+clearest argument for upgrading `EMBEDDING_BACKEND` to `openai` in a real
+deployment — see [Technical decisions](docs/architecture.md#technical-decisions)
+for why it defaults to an offline hashing vectorizer instead.
+
 ## Running tests
 
 ```bash
