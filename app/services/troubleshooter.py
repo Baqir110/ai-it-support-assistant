@@ -18,12 +18,18 @@ def analyze_issue(issue_text: str) -> IssueAnalysis:
     # relevant documentation exists.
     try:
         search_results = get_vector_store().search(issue_text)
-    except Exception:  # pragma: no cover - defensive, vector store issues shouldn't 500 the API
-        logger.exception("Vector store search failed; continuing without retrieved context.")
+    except (
+        Exception
+    ):  # pragma: no cover - defensive, vector store issues shouldn't 500 the API
+        logger.exception(
+            "Vector store search failed; continuing without retrieved context."
+        )
         search_results = []
 
     sources = [
-        SourceReference(source=r.source, snippet=r.content[:280], relevance_score=r.score)
+        SourceReference(
+            source=r.source, snippet=r.content[:280], relevance_score=r.score
+        )
         for r in search_results
     ]
 

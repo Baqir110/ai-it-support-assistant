@@ -39,7 +39,9 @@ def _chunk_markdown(text: str, source: str, max_chars: int = 800) -> list[Chunk]
         else:
             for j in range(0, len(section), max_chars):
                 piece = section[j : j + max_chars]
-                chunks.append(Chunk(id=f"{source}::{i}.{j}", source=source, content=piece))
+                chunks.append(
+                    Chunk(id=f"{source}::{i}.{j}", source=source, content=piece)
+                )
     return chunks
 
 

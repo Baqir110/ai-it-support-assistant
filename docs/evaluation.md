@@ -11,8 +11,8 @@ Re-run with `python scripts/evaluate.py` after any change to `app/services/class
 | Classification accuracy | 84.0% |
 | Escalation-flag accuracy | 96.0% |
 | Retrieval hit rate (correct doc in top-3) | 69.6% (23 applicable cases) |
-| Avg latency | 4.82 ms |
-| p95 latency | 1.83 ms |
+| Avg latency | 6.66 ms |
+| p95 latency | 2.52 ms |
 
 ## Per-category precision / recall / F1
 

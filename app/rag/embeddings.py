@@ -56,7 +56,9 @@ class OpenAIEmbeddingFunction(EmbeddingFunction[Documents]):
         from openai import OpenAI
 
         settings = get_settings()
-        client = OpenAI(api_key=settings.openai_api_key, base_url=settings.openai_base_url)
+        client = OpenAI(
+            api_key=settings.openai_api_key, base_url=settings.openai_base_url
+        )
         response = client.embeddings.create(model=self._model, input=list(input))
         return [item.embedding for item in response.data]
 

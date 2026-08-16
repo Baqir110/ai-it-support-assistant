@@ -42,7 +42,9 @@ def test_analyze_endpoint_rejects_too_short_issue():
 
 
 def test_knowledge_base_search_endpoint():
-    response = client.get("/knowledge-base/search", params={"q": "printer not printing"})
+    response = client.get(
+        "/knowledge-base/search", params={"q": "printer not printing"}
+    )
     assert response.status_code == 200
     results = response.json()
     assert len(results) > 0

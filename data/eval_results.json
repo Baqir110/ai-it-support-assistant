@@ -4,8 +4,8 @@
   "escalation_accuracy": 0.96,
   "retrieval_hit_rate": 0.696,
   "retrieval_applicable_cases": 23,
-  "avg_latency_ms": 4.82,
-  "p95_latency_ms": 1.83,
+  "avg_latency_ms": 6.66,
+  "p95_latency_ms": 2.52,
   "per_category": {
     "authentication": {
       "precision": 0.8,
@@ -56,7 +56,7 @@
       "retrieval_hit": true,
       "confidence": 0.9,
       "generated_by": "rule_based",
-      "latency_ms": 82.52
+      "latency_ms": 114.45
     },
     {
       "issue": "The office VPN keeps disconnecting every few minutes.",
@@ -69,7 +69,7 @@
       "retrieval_hit": true,
       "confidence": 0.9,
       "generated_by": "rule_based",
-      "latency_ms": 2.05
+      "latency_ms": 2.32
     },
     {
       "issue": "I can't reach any websites but Teams still works.",
@@ -82,7 +82,7 @@
       "retrieval_hit": true,
       "confidence": 0.3,
       "generated_by": "rule_based",
-      "latency_ms": 1.73
+      "latency_ms": 2.18
     },
     {
       "issue": "My internet connection drops every time it rains.",
@@ -95,7 +95,7 @@
       "retrieval_hit": false,
       "confidence": 0.9,
       "generated_by": "rule_based",
-      "latency_ms": 1.58
+      "latency_ms": 2.18
     },
     {
       "issue": "I forgot my password and can't log into my laptop.",
@@ -108,7 +108,7 @@
       "retrieval_hit": true,
       "confidence": 0.9,
       "generated_by": "rule_based",
-      "latency_ms": 1.65
+      "latency_ms": 2.16
     },
     {
       "issue": "My account got locked out after too many login attempts.",
@@ -121,7 +121,7 @@
       "retrieval_hit": true,
       "confidence": 0.9,
       "generated_by": "rule_based",
-      "latency_ms": 1.52
+      "latency_ms": 2.05
     },
     {
       "issue": "The 2FA app won't accept my authentication code.",
@@ -134,7 +134,7 @@
       "retrieval_hit": true,
       "confidence": 0.9,
       "generated_by": "rule_based",
-      "latency_ms": 1.57
+      "latency_ms": 2.0
     },
     {
       "issue": "I can't sign in to my email, it says invalid credentials.",
@@ -147,7 +147,7 @@
       "retrieval_hit": false,
       "confidence": 0.9,
       "generated_by": "rule_based",
-      "latency_ms": 1.52
+      "latency_ms": 1.88
     },
     {
       "issue": "My computer has been extremely slow for the past two days.",
@@ -160,7 +160,7 @@
       "retrieval_hit": false,
       "confidence": 0.85,
       "generated_by": "rule_based",
-      "latency_ms": 1.53
+      "latency_ms": 1.94
     },
     {
       "issue": "Excel freezes constantly when I open large spreadsheets.",
@@ -173,7 +173,7 @@
       "retrieval_hit": true,
       "confidence": 0.85,
       "generated_by": "rule_based",
-      "latency_ms": 1.59
+      "latency_ms": 2.06
     },
     {
       "issue": "The fan is running loud and everything is laggy.",
@@ -186,7 +186,7 @@
       "retrieval_hit": false,
       "confidence": 0.85,
       "generated_by": "rule_based",
-      "latency_ms": 1.5
+      "latency_ms": 2.0
     },
     {
       "issue": "My laptop takes ten minutes just to boot up now.",
@@ -199,7 +199,7 @@
       "retrieval_hit": true,
       "confidence": 0.85,
       "generated_by": "rule_based",
-      "latency_ms": 1.61
+      "latency_ms": 2.05
     },
     {
       "issue": "The office printer won't print my documents.",
@@ -212,7 +212,7 @@
       "retrieval_hit": true,
       "confidence": 0.85,
       "generated_by": "rule_based",
-      "latency_ms": 1.48
+      "latency_ms": 1.97
     },
     {
       "issue": "My external monitor isn't being detected at all.",
@@ -225,7 +225,7 @@
       "retrieval_hit": true,
       "confidence": 0.85,
       "generated_by": "rule_based",
-      "latency_ms": 1.53
+      "latency_ms": 2.09
     },
     {
       "issue": "My webcam doesn't work during video calls.",
@@ -238,7 +238,7 @@
       "retrieval_hit": true,
       "confidence": 0.85,
       "generated_by": "rule_based",
-      "latency_ms": 1.6
+      "latency_ms": 2.12
     },
     {
       "issue": "None of my USB devices are being recognized anymore.",
@@ -251,7 +251,7 @@
       "retrieval_hit": true,
       "confidence": 0.85,
       "generated_by": "rule_based",
-      "latency_ms": 1.5
+      "latency_ms": 2.3
     },
     {
       "issue": "My laptop keeps crashing with a blue screen error.",
@@ -264,7 +264,7 @@
       "retrieval_hit": true,
       "confidence": 0.8,
       "generated_by": "rule_based",
-      "latency_ms": 1.52
+      "latency_ms": 2.52
     },
     {
       "issue": "The computer restarts randomly with no warning at all.",
@@ -277,7 +277,7 @@
       "retrieval_hit": false,
       "confidence": 0.8,
       "generated_by": "rule_based",
-      "latency_ms": 1.48
+      "latency_ms": 2.19
     },
     {
       "issue": "My PC won't boot past the manufacturer logo screen.",
@@ -290,7 +290,7 @@
       "retrieval_hit": true,
       "confidence": 0.8,
       "generated_by": "rule_based",
-      "latency_ms": 1.48
+      "latency_ms": 2.25
     },
     {
       "issue": "Something strange is happening and I don't know what.",
@@ -303,7 +303,7 @@
       "retrieval_hit": null,
       "confidence": 0.3,
       "generated_by": "rule_based",
-      "latency_ms": 1.51
+      "latency_ms": 2.72
     },
     {
       "issue": "My computer is making a weird noise I've never heard.",
@@ -316,7 +316,7 @@
       "retrieval_hit": null,
       "confidence": 0.3,
       "generated_by": "rule_based",
-      "latency_ms": 1.47
+      "latency_ms": 2.28
     },
     {
       "issue": "My monitor keeps losing signal whenever the network switch nearby cycles.",
@@ -329,7 +329,7 @@
       "retrieval_hit": true,
       "confidence": 0.9,
       "generated_by": "rule_based",
-      "latency_ms": 1.46
+      "latency_ms": 2.22
     },
     {
       "issue": "I think my account was compromised and now the VPN won't connect either.",
@@ -342,7 +342,7 @@
       "retrieval_hit": false,
       "confidence": 0.9,
       "generated_by": "rule_based",
-      "latency_ms": 1.53
+      "latency_ms": 2.19
     },
     {
       "issue": "Everything is slow and I also can't log in some mornings.",
@@ -355,7 +355,7 @@
       "retrieval_hit": false,
       "confidence": 0.9,
       "generated_by": "rule_based",
-      "latency_ms": 1.83
+      "latency_ms": 2.2
     },
     {
       "issue": "The printer driver update caused the whole system to blue screen.",
@@ -368,7 +368,7 @@
       "retrieval_hit": true,
       "confidence": 0.85,
       "generated_by": "rule_based",
-      "latency_ms": 1.64
+      "latency_ms": 2.11
     }
   ]
 }

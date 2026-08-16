@@ -1,3 +1,7 @@
+## Live Demo & API Interface
+![Swagger API Interface](assets/swagger_demo.png)
+
+
 # AI IT Support Assistant
 
 A RAG-backed API that classifies IT support issues, retrieves grounded

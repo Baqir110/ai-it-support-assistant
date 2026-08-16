@@ -39,32 +39,132 @@ CATEGORY_TO_SOURCE = {
 # Labeled eval set. Includes a handful of deliberately ambiguous/hard cases
 # (marked) so the reported accuracy is honest rather than a rigged 100%.
 EVAL_SET = [
-    {"issue": "My Windows laptop cannot connect to Wi-Fi.", "category": "network", "escalation": False},
-    {"issue": "The office VPN keeps disconnecting every few minutes.", "category": "network", "escalation": False},
-    {"issue": "I can't reach any websites but Teams still works.", "category": "network", "escalation": False},
-    {"issue": "My internet connection drops every time it rains.", "category": "network", "escalation": False},
-    {"issue": "I forgot my password and can't log into my laptop.", "category": "authentication", "escalation": False},
-    {"issue": "My account got locked out after too many login attempts.", "category": "authentication", "escalation": False},
-    {"issue": "The 2FA app won't accept my authentication code.", "category": "authentication", "escalation": False},
-    {"issue": "I can't sign in to my email, it says invalid credentials.", "category": "authentication", "escalation": False},
-    {"issue": "My computer has been extremely slow for the past two days.", "category": "performance", "escalation": False},
-    {"issue": "Excel freezes constantly when I open large spreadsheets.", "category": "performance", "escalation": False},
-    {"issue": "The fan is running loud and everything is laggy.", "category": "performance", "escalation": False},
-    {"issue": "My laptop takes ten minutes just to boot up now.", "category": "performance", "escalation": False},
-    {"issue": "The office printer won't print my documents.", "category": "hardware", "escalation": False},
-    {"issue": "My external monitor isn't being detected at all.", "category": "hardware", "escalation": False},
-    {"issue": "My webcam doesn't work during video calls.", "category": "hardware", "escalation": False},
-    {"issue": "None of my USB devices are being recognized anymore.", "category": "hardware", "escalation": False},
-    {"issue": "My laptop keeps crashing with a blue screen error.", "category": "system", "escalation": True},
-    {"issue": "The computer restarts randomly with no warning at all.", "category": "system", "escalation": True},
-    {"issue": "My PC won't boot past the manufacturer logo screen.", "category": "system", "escalation": True},
-    {"issue": "Something strange is happening and I don't know what.", "category": "general", "escalation": True},
-    {"issue": "My computer is making a weird noise I've never heard.", "category": "general", "escalation": True},
+    {
+        "issue": "My Windows laptop cannot connect to Wi-Fi.",
+        "category": "network",
+        "escalation": False,
+    },
+    {
+        "issue": "The office VPN keeps disconnecting every few minutes.",
+        "category": "network",
+        "escalation": False,
+    },
+    {
+        "issue": "I can't reach any websites but Teams still works.",
+        "category": "network",
+        "escalation": False,
+    },
+    {
+        "issue": "My internet connection drops every time it rains.",
+        "category": "network",
+        "escalation": False,
+    },
+    {
+        "issue": "I forgot my password and can't log into my laptop.",
+        "category": "authentication",
+        "escalation": False,
+    },
+    {
+        "issue": "My account got locked out after too many login attempts.",
+        "category": "authentication",
+        "escalation": False,
+    },
+    {
+        "issue": "The 2FA app won't accept my authentication code.",
+        "category": "authentication",
+        "escalation": False,
+    },
+    {
+        "issue": "I can't sign in to my email, it says invalid credentials.",
+        "category": "authentication",
+        "escalation": False,
+    },
+    {
+        "issue": "My computer has been extremely slow for the past two days.",
+        "category": "performance",
+        "escalation": False,
+    },
+    {
+        "issue": "Excel freezes constantly when I open large spreadsheets.",
+        "category": "performance",
+        "escalation": False,
+    },
+    {
+        "issue": "The fan is running loud and everything is laggy.",
+        "category": "performance",
+        "escalation": False,
+    },
+    {
+        "issue": "My laptop takes ten minutes just to boot up now.",
+        "category": "performance",
+        "escalation": False,
+    },
+    {
+        "issue": "The office printer won't print my documents.",
+        "category": "hardware",
+        "escalation": False,
+    },
+    {
+        "issue": "My external monitor isn't being detected at all.",
+        "category": "hardware",
+        "escalation": False,
+    },
+    {
+        "issue": "My webcam doesn't work during video calls.",
+        "category": "hardware",
+        "escalation": False,
+    },
+    {
+        "issue": "None of my USB devices are being recognized anymore.",
+        "category": "hardware",
+        "escalation": False,
+    },
+    {
+        "issue": "My laptop keeps crashing with a blue screen error.",
+        "category": "system",
+        "escalation": True,
+    },
+    {
+        "issue": "The computer restarts randomly with no warning at all.",
+        "category": "system",
+        "escalation": True,
+    },
+    {
+        "issue": "My PC won't boot past the manufacturer logo screen.",
+        "category": "system",
+        "escalation": True,
+    },
+    {
+        "issue": "Something strange is happening and I don't know what.",
+        "category": "general",
+        "escalation": True,
+    },
+    {
+        "issue": "My computer is making a weird noise I've never heard.",
+        "category": "general",
+        "escalation": True,
+    },
     # --- Deliberately ambiguous / hard cases -------------------------------
-    {"issue": "My monitor keeps losing signal whenever the network switch nearby cycles.", "category": "hardware", "escalation": False},
-    {"issue": "I think my account was compromised and now the VPN won't connect either.", "category": "authentication", "escalation": False},
-    {"issue": "Everything is slow and I also can't log in some mornings.", "category": "performance", "escalation": False},
-    {"issue": "The printer driver update caused the whole system to blue screen.", "category": "hardware", "escalation": False},
+    {
+        "issue": "My monitor keeps losing signal whenever the network switch nearby cycles.",
+        "category": "hardware",
+        "escalation": False,
+    },
+    {
+        "issue": "I think my account was compromised and now the VPN won't connect either.",
+        "category": "authentication",
+        "escalation": False,
+    },
+    {
+        "issue": "Everything is slow and I also can't log in some mornings.",
+        "category": "performance",
+        "escalation": False,
+    },
+    {
+        "issue": "The printer driver update caused the whole system to blue screen.",
+        "category": "hardware",
+        "escalation": False,
+    },
 ]
 
 
@@ -134,7 +234,9 @@ def run_evaluation() -> dict:
     per_category_metrics = {}
     for cat in sorted(all_categories):
         counts = category_counts[cat]
-        precision, recall, f1 = precision_recall_f1(counts["tp"], counts["fp"], counts["fn"])
+        precision, recall, f1 = precision_recall_f1(
+            counts["tp"], counts["fp"], counts["fn"]
+        )
         per_category_metrics[cat] = {
             "precision": precision,
             "recall": recall,
@@ -146,7 +248,11 @@ def run_evaluation() -> dict:
         "n_cases": n,
         "classification_accuracy": round(correct / n, 3),
         "escalation_accuracy": round(escalation_correct / n, 3),
-        "retrieval_hit_rate": round(retrieval_hits / retrieval_applicable, 3) if retrieval_applicable else None,
+        "retrieval_hit_rate": (
+            round(retrieval_hits / retrieval_applicable, 3)
+            if retrieval_applicable
+            else None
+        ),
         "retrieval_applicable_cases": retrieval_applicable,
         "avg_latency_ms": round(sum(latencies) / n, 2),
         "p95_latency_ms": round(sorted(latencies)[int(n * 0.95) - 1], 2),
@@ -185,7 +291,9 @@ def render_markdown(results: dict) -> str:
         "|---|---|---|---|---|",
     ]
     for cat, m in results["per_category"].items():
-        lines.append(f"| {cat} | {m['precision']} | {m['recall']} | {m['f1']} | {m['support']} |")
+        lines.append(
+            f"| {cat} | {m['precision']} | {m['recall']} | {m['f1']} | {m['support']} |"
+        )
 
     lines += [
         "",
@@ -194,9 +302,15 @@ def render_markdown(results: dict) -> str:
         "| Issue | Expected | Predicted | Retrieval hit |",
         "|---|---|---|---|",
     ]
-    notable = [c for c in results["cases"] if not c["category_correct"] or c["retrieval_hit"] is False]
+    notable = [
+        c
+        for c in results["cases"]
+        if not c["category_correct"] or c["retrieval_hit"] is False
+    ]
     if not notable:
-        lines.append("| _None - all cases correctly classified with a retrieval hit_ | | | |")
+        lines.append(
+            "| _None - all cases correctly classified with a retrieval hit_ | | | |"
+        )
     else:
         for c in notable:
             lines.append(

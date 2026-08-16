@@ -42,13 +42,18 @@ def generate_grounded_analysis(
     """
     settings = get_settings()
     if not settings.llm_enabled:
-        raise LLMUnavailableError("No LLM provider configured (set LLM_PROVIDER=openai and OPENAI_API_KEY).")
+        raise LLMUnavailableError(
+            "No LLM provider configured (set LLM_PROVIDER=openai and OPENAI_API_KEY)."
+        )
 
     from openai import OpenAI
 
     client = OpenAI(api_key=settings.openai_api_key, base_url=settings.openai_base_url)
 
-    context_block = "\n\n".join(f"[Doc {i+1}] {c}" for i, c in enumerate(retrieved_context)) or "(no documentation retrieved)"
+    context_block = (
+        "\n\n".join(f"[Doc {i+1}] {c}" for i, c in enumerate(retrieved_context))
+        or "(no documentation retrieved)"
+    )
     user_prompt = (
         f"User issue: {issue_text}\n"
         f"Classification: category={category}, severity={severity}\n\n"

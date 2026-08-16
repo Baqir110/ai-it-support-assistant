@@ -11,7 +11,9 @@ def test_wifi_issue_classified_as_network():
 
 
 def test_login_issue_classified_as_authentication():
-    result = classify("I cannot login to my account because my password is not working.")
+    result = classify(
+        "I cannot login to my account because my password is not working."
+    )
     assert result.category == "authentication"
     assert result.severity == "medium"
     assert result.escalation_required is False

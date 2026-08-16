@@ -57,13 +57,17 @@ class VectorStore:
             )
         return len(chunks)
 
-    def search(self, query: str, top_k: int | None = None) -> list[KnowledgeSearchResult]:
+    def search(
+        self, query: str, top_k: int | None = None
+    ) -> list[KnowledgeSearchResult]:
         settings = get_settings()
         k = top_k or settings.retrieval_top_k
         if self._collection.count() == 0:
             return []
 
-        results = self._collection.query(query_texts=[query], n_results=min(k, self._collection.count()))
+        results = self._collection.query(
+            query_texts=[query], n_results=min(k, self._collection.count())
+        )
 
         documents = results.get("documents", [[]])[0]
         metadatas = results.get("metadatas", [[]])[0]
