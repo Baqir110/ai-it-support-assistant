@@ -34,7 +34,7 @@
 ---
 
 ## 📖 Overview
-
+![Swagger API Interface](assests/swagger_demo.png)
 A **RAG-backed API** that classifies IT support issues, retrieves grounded context from an internal knowledge base, and returns a structured troubleshooting recommendation — including probable cause, steps, relevant commands, severity, escalation guidance, and the sources used.
 
 **Key Differentiators**:
@@ -335,11 +335,6 @@ M.Sc. Software Systems Science
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
-
----
 
 <p align="center">
   Made with ❤️ and 🐍 Python
