@@ -12,6 +12,7 @@ sentence-transformers
 langchain-core
 langchain-community
 langchain-huggingface
+langchain-chroma
 
 # LLM (Optional)
 openai
