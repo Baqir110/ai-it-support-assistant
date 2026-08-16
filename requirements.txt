@@ -4,17 +4,19 @@ pydantic
 pydantic-settings
 python-dotenv
 
-# RAG pipeline
+# RAG & Embeddings
 chromadb
 scikit-learn
 numpy
-
-# LLM (OpenAI-compatible; optional at runtime, required for LLM-augmented mode)
-openai
+sentence-transformers
 langchain-core
 langchain-community
+langchain-huggingface
 
-# Persistence (optional at runtime, required for DB-backed logging)
+# LLM (Optional)
+openai
+
+# Persistence
 sqlalchemy
 psycopg2-binary
 
