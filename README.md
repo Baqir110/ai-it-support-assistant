@@ -1,30 +1,17 @@
-![Swagger API Interface](assests\swagger_demo.png)
-## Live Demo & API Interface
-
-
-
 # AI IT Support Assistant
 
-A RAG-backed API that classifies IT support issues, retrieves grounded
-context from an internal knowledge base, and returns a structured
-troubleshooting recommendation — probable cause, steps, relevant commands,
-severity, escalation guidance, and the sources it used.
+A RAG-backed API that classifies IT support issues, retrieves grounded context from an internal knowledge base, and returns a structured troubleshooting recommendation — probable cause, steps, relevant commands, severity, escalation guidance, and the sources it used.
 
-Runs fully offline out of the box (no API keys required) and upgrades to
-LLM-augmented generation and PostgreSQL-backed analytics with a couple of
-environment variables. See [`docs/architecture.md`](docs/architecture.md)
-for the full design rationale.
+![Swagger API Interface](assests/swagger_demo.png)
+
+Runs fully offline out of the box (no API keys required) and upgrades to LLM-augmented generation and PostgreSQL-backed analytics with a couple of environment variables. See [`docs/architecture.md`](docs/architecture.md) for the full design rationale.
 
 ## Features
 
 - FastAPI REST API with OpenAPI docs at `/docs`
 - Deterministic classifier: category, severity, confidence, escalation policy
-- RAG pipeline: ChromaDB vector store over a Markdown knowledge base,
-  with a pluggable embedding backend (offline hashing vectorizer by
-  default, OpenAI embeddings optional)
-- Optional LLM-augmented generation via any OpenAI-compatible endpoint
-  (OpenAI, Azure OpenAI, local vLLM/Ollama, etc.) — with automatic
-  fallback to the deterministic generator if the LLM is unavailable
+- RAG pipeline: ChromaDB vector store over a Markdown knowledge base, with a pluggable embedding backend (offline hashing vectorizer by default, OpenAI embeddings optional)
+- Optional LLM-augmented generation via any OpenAI-compatible endpoint (OpenAI, Azure OpenAI, local vLLM/Ollama, etc.) — with automatic fallback to the deterministic generator if the LLM is unavailable
 - Optional PostgreSQL logging of every analysis for evaluation
 - Dockerized (API + Postgres) via `docker-compose`
 - Automated tests with pytest (classifier, RAG grounding, API, LLM fallback)
